@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import org.w3c.dom.Text
 
@@ -59,6 +60,12 @@ class FinalActivity : AppCompatActivity() {
                 "Avaliação de qualidade do IBMEC: \n" + valorTot.toString() + "/10\n" + resultado.text.toString()
             )
             startActivity(intent)
+        }
+        val btCall = findViewById<ImageButton>(R.id.call)
+        btCall.setOnClickListener {
+            val telefone = "+5521999686042"
+            val intent2 = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$telefone"))
+            startActivity(intent2)
         }
     }
 }
